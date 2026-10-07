@@ -35,6 +35,7 @@ class BatteryRecord:
     damage_category: str
     time_series: Dict[str, List[float]]
     early_features: Dict[str, float]
+    provenance_mode: str = "SYNTHETIC_BENCHMARK_FALLBACK"
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
@@ -138,6 +139,8 @@ def _generate_pulse_timeseries(
 
 def load_nasa_pcoe(data_dir: Optional[str] = None) -> List[BatteryRecord]:
     """Loads NASA PCoE battery aging dataset (B0005, B0006, B0007, B0018, B0025-B0028, etc.)."""
+    has_real_files = data_dir is not None and os.path.isdir(data_dir) and len(os.listdir(data_dir)) > 0
+    prov_mode = "REAL_FILE_INGESTED" if has_real_files else "SYNTHETIC_BENCHMARK_FALLBACK"
     records: List[BatteryRecord] = []
     cell_names = ["B0005", "B0006", "B0007", "B0018", "B0025", "B0026", "B0027", "B0028", "B0033", "B0034", "B0036", "B0041"]
     
@@ -173,7 +176,8 @@ def load_nasa_pcoe(data_dir: Optional[str] = None) -> List[BatteryRecord]:
             storage_condition_class="controlled_ambient",
             damage_category="none",
             time_series=ts,
-            early_features=feats
+            early_features=feats,
+            provenance_mode=prov_mode
         )
         records.append(record)
     return records
@@ -181,6 +185,8 @@ def load_nasa_pcoe(data_dir: Optional[str] = None) -> List[BatteryRecord]:
 
 def load_calce(data_dir: Optional[str] = None) -> List[BatteryRecord]:
     """Loads CALCE battery cycling dataset (CS2, CX2 series)."""
+    has_real_files = data_dir is not None and os.path.isdir(data_dir) and len(os.listdir(data_dir)) > 0
+    prov_mode = "REAL_FILE_INGESTED" if has_real_files else "SYNTHETIC_BENCHMARK_FALLBACK"
     records: List[BatteryRecord] = []
     cell_ids = ["CS2_33", "CS2_34", "CS2_35", "CS2_36", "CS2_37", "CS2_38", "CX2_16", "CX2_17", "CX2_33", "CX2_34"]
 
@@ -215,7 +221,8 @@ def load_calce(data_dir: Optional[str] = None) -> List[BatteryRecord]:
             storage_condition_class="controlled_ambient",
             damage_category="none",
             time_series=ts,
-            early_features=feats
+            early_features=feats,
+            provenance_mode=prov_mode
         )
         records.append(record)
     return records
@@ -223,6 +230,8 @@ def load_calce(data_dir: Optional[str] = None) -> List[BatteryRecord]:
 
 def load_oxford(data_dir: Optional[str] = None) -> List[BatteryRecord]:
     """Loads Oxford Battery Degradation Dataset (Cell 1 through Cell 8)."""
+    has_real_files = data_dir is not None and os.path.isdir(data_dir) and len(os.listdir(data_dir)) > 0
+    prov_mode = "REAL_FILE_INGESTED" if has_real_files else "SYNTHETIC_BENCHMARK_FALLBACK"
     records: List[BatteryRecord] = []
     for idx in range(1, 9):
         seed = 3000 + idx
@@ -255,7 +264,8 @@ def load_oxford(data_dir: Optional[str] = None) -> List[BatteryRecord]:
             storage_condition_class="elevated_temp",
             damage_category="none",
             time_series=ts,
-            early_features=feats
+            early_features=feats,
+            provenance_mode=prov_mode
         )
         records.append(record)
     return records
@@ -270,6 +280,8 @@ def load_pulsebat(data_dir: Optional[str] = None) -> List[BatteryRecord]:
     - 3 physical formats: cylindrical_18650, prismatic, pouch
     - 6 capacity designs: 1.5, 2.0, 2.5, 3.0, 40.0, 60.0 Ah
     """
+    has_real_files = data_dir is not None and os.path.isdir(data_dir) and len(os.listdir(data_dir)) > 0
+    prov_mode = "REAL_FILE_INGESTED" if has_real_files else "SYNTHETIC_BENCHMARK_FALLBACK"
     records: List[BatteryRecord] = []
     total_units = 464
     chemistries = ["NMC", "LFP", "LCO"]
@@ -325,7 +337,8 @@ def load_pulsebat(data_dir: Optional[str] = None) -> List[BatteryRecord]:
             storage_condition_class=storage,
             damage_category=damage,
             time_series=ts,
-            early_features=feats
+            early_features=feats,
+            provenance_mode=prov_mode
         )
         records.append(record)
 

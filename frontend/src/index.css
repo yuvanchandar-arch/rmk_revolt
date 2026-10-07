@@ -897,3 +897,287 @@ body {
   background-color: rgba(2, 132, 199, 0.12) !important;
 }
 
+/* Dedicated EMAT Multiphysics Visualizer Styles (Matching Reference Mockup) */
+.emat-layout-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #e2e8f0;
+}
+
+.emat-view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0b111e;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 14px 20px;
+}
+
+.emat-view-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.emat-view-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emat-view-subtitle {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+.emat-badges-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.emat-badge-pill {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.emat-badge-sim {
+  background: rgba(2, 132, 199, 0.2);
+  border: 1px solid #0284c7;
+  color: #38bdf8;
+}
+
+.emat-badge-databound {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid #10b981;
+  color: #34d399;
+}
+
+.emat-subnav-pills {
+  display: flex;
+  gap: 6px;
+  background: #0f172a;
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid #1e293b;
+}
+
+.emat-subnav-btn {
+  padding: 5px 12px;
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.emat-subnav-btn.active {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+.emat-legend-bar {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 0.74rem;
+  color: #94a3b8;
+  padding: 4px 0 10px 0;
+}
+
+.emat-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emat-grid-main {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 16px;
+}
+
+.emat-canvas-card {
+  background: #080d17;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.emat-right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.emat-panel-card {
+  background: #0b111e;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.emat-panel-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.emat-state-btn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.emat-state-btn {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #cbd5e1;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.emat-state-btn:hover {
+  border-color: #0284c7;
+  background: #1e293b;
+}
+
+.emat-state-btn.active {
+  background: rgba(2, 132, 199, 0.2);
+  border-color: #38bdf8;
+  color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.2);
+}
+
+.emat-slider-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.emat-slider-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.emat-features-table {
+  width: 100%;
+  font-size: 0.78rem;
+  border-collapse: collapse;
+}
+
+.emat-features-table td {
+  padding: 5px 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+.emat-features-table td:first-child {
+  color: #94a3b8;
+}
+
+.emat-features-table td:last-child {
+  text-align: right;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.emat-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 160px 1fr;
+  gap: 16px;
+}
+
+.emat-waveform-card {
+  background: #080d17;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.emat-ascan-card {
+  background: #080d17;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emat-layer-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.emat-layer-card {
+  background: #0b111e;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.emat-layer-card-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.emat-layer-card-sub {
+  font-size: 0.65rem;
+  color: #64748b;
+}
+
+.emat-layer-card-stat {
+  font-size: 0.68rem;
+  color: #cbd5e1;
+}
+
+.emat-summary-box {
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+
