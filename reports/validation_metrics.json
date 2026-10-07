@@ -1,0 +1,84 @@
+{
+  "E0": {
+    "trials": 500,
+    "alpha_target": 0.05,
+    "confidence_level": 0.9,
+    "mean_empirical_risk": 0.0,
+    "max_empirical_risk": 0.0,
+    "violations_count": 0,
+    "violation_rate": 0.0,
+    "mean_conditional_fail_rate": 0.0
+  },
+  "E1": {
+    "trials": 500,
+    "unstratified_violation_rate": 0.0,
+    "segregated_violation_rate": 0.0,
+    "sub_lot_protection_verified": true
+  },
+  "E2": {
+    "full_test_time_hours": 800.0,
+    "lotus_emat_time_hours": 272.4555555555556,
+    "savings_percentage": 65.9,
+    "target_met": true
+  },
+  "E3": {
+    "m_values": [
+      15,
+      25,
+      45,
+      60,
+      80,
+      100,
+      140,
+      180
+    ],
+    "realized_savings_percentage": [
+      69.66,
+      54.9,
+      65.94,
+      56.96,
+      49.33,
+      41.06,
+      24.81,
+      9.17
+    ],
+    "conservative_prior_savings_percentage": [
+      0.0,
+      0.0,
+      67.79,
+      61.78,
+      51.16,
+      39.48,
+      25.12,
+      8.43
+    ],
+    "reference_m": 45,
+    "reconciliation_note": "At m=45, Realized Savings is 65.94% (under fully wired Stage 2 kinetic screening and ground-truth Stage 3 fallback), closely matching the Conservative Prior of 67.79%."
+  },
+  "E4": {
+    "solar_backup": {
+      "approved": 69,
+      "escalated": 0,
+      "rejected": 74,
+      "savings_pct": 65.9,
+      "certified_risk_bound": 0.0499,
+      "conditional_fail_rate": 0.0
+    },
+    "low_power_lighting": {
+      "approved": 143,
+      "escalated": 0,
+      "rejected": 0,
+      "savings_pct": 77.3,
+      "certified_risk_bound": 0.0499,
+      "conditional_fail_rate": 0.0
+    },
+    "fast_charge_buffer": {
+      "approved": 1,
+      "escalated": 0,
+      "rejected": 142,
+      "savings_pct": 75.8,
+      "certified_risk_bound": 0.0499,
+      "conditional_fail_rate": 0.0
+    }
+  }
+}
